@@ -3,7 +3,7 @@
   "displayName": "公众号日更 (WeChat Official Account Daily)",
   "version": "1.0.0",
   "description": "\"让我们来聊AI\" 公众号日更内容生产技能（v1）。每天产出 1 篇 MD 稿件 + 1 张封面图 + 2 张内文插图 + 1 个可直接粘贴的 HTML 文件，主推通过 API 推送到公众号草稿箱，邮件作为备用，并自动归档到知识库。触发词：写公众号稿件、备稿、今天的内容、Day N、公众号日更、生成封面、生成插图、发送邮件、归档知识库。当需要为 AI 科普公众号准备每日发布内容时使用此技能。",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

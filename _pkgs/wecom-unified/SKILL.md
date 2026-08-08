@@ -1,220 +1,77 @@
 ---
 name: wecom-unified
-description: "企业微信 CLI 全能套件，覆盖通讯录、消息、文档、日程、会议、待办 6 大业务域。支持按姓名/别名查找联系人、收发消息（文本/图片/文件/语音/视频）、读取/创建/编辑文档（可由'https://doc.weixin.qq.com/XXXX'链接触发）、创建/读取/修改表格（在线表格）内容、追加行、增删子工作表、读写智能表格的子表/字段/记录、创建并导出智能文档、创建/修改/取消日程并查询闲忙、预约/管理会议、创建/跟踪/分派待办任务。即使用户未明确提到'企业微信'，只要消息中涉及doc.weixin.qq.com的url域名/消息/日程/待办/文档/表格/会议/找人等场景也应触发本技能"
-version: 1.0.2
-allowed-tools: Bash, Read
-display_name: "企业微信套件"
-display_name_en: "Wecom Unified"
-description_zh: "企业微信 CLI 套件，覆盖文档/消息/日程/会议/待办/通讯录等业务功能。10人以上规模的企业，支持新建和读取文档/智能表格/智能文档；10人及以下个人及小团队，支持文档读写、收发单聊/群聊消息、日程/会议/待办管理、获取通讯录等能力。"
+description: WeCom (Enterprise WeChat) CLI suite covering six domains — contacts, messages, documents, calendars, meetings, and todos. Look up people by name/alias, send/receive messages (text/image/file/voice/video), create/read/edit docs, manage online sheets and smart tables, schedule meetings, and track todos. Trigger even without the words "WeCom" when the message involves doc.weixin.qq.com URLs, messages, schedules, todos, documents, sheets, meetings, or finding a person.
 description_en: "WeCom CLI suite covering docs, messages, calendars, meetings, todos, and contacts. For organizations with 10+ members: create and read docs, smart sheets, and smart docs. For individuals and small teams (10 or fewer): read/write docs, send/receive direct and group messages, manage calendars, meetings, and todos, and look up contacts."
-visibility: "public"
+version: 1.0.2
+display_name: "企业微信套件"
+tags:
+  - wecom
+  - enterprise-wechat
+  - messaging
+  - collaboration
+visibility: public
 ---
 
-# 企业微信套件 (WeCom Unified)
+# WeCom Unified
 
-企业微信 CLI (`wecom-cli`) 全能套件，通过命令行工具与企业微信系统交互，覆盖 6 大业务域：通讯录、消息、文档（含文档/表格/智能表格/智能文档 4 种品类）、日程、会议、待办。
+The `wecom-cli` suite talks to Enterprise WeChat from the command line across six domains: contacts, messages, documents (doc / sheet / smartsheet / smartpage), schedules, meetings, and todos.
 
-## ⚠️ 前置检查 — 使用任何命令前必须执行
+## Pre-check (run before any command)
+1. Is the CLI installed?
+   ```bash
+   wecom-cli --version
+   ```
+   If missing: `npm install -g @wecom/cli@0.1.9`
+2. Are credentials configured?
+   ```bash
+   wecom-cli auth show --auth-status
+   ```
+   `authorized` → ready. `unauthorized` → run step 3.
+3. Authorize (only if needed):
+   ```bash
+   wecom-cli init --noninteractive
+   ```
+   This prints an auth link + QR and blocks until the user scans; it exits on success and only runs once.
 
-### Step 1: 检查 CLI 是否安装
+## Domains
+- **Contacts** — list visible members, search by name/alias, resolve userid. See `references/wecom-contact.md`.
+- **Messages** — list conversations, pull history (text/image/file/voice/video), fetch media, send text. See `references/wecom-msg.md`.
+- **Documents** — create/read/edit `/doc/*` (doc_type=3) as Markdown; locate by docid or URL. See `references/wecom-doc.md`.
+- **Sheets (online)** — full management of `/sheet/*`: create blank, read content (Markdown, async poll), read base info + sub-sheet list, edit a range, append a row, add/remove sub-sheets. See `references/wecom-sheet.md`.
+- **Smartpage (smart doc)** — create (from local Markdown, multi-page) and export (two-step async). Trigger only when the user says "智能文档"/"智能主页". See `references/wecom-smartpage.md`.
+- **Smartsheet** — create `/smartsheet/*` (doc_type=10); CRUD sub-tables / fields / records; write records with images or files; Webhook fallback when writes are restricted. See `references/wecom-smartsheet.md`.
+- **Schedule** — list/detail, create/modify/cancel, add/remove attendees, query free/busy across members and find common free time. See `references/wecom-schedule.md`.
+- **Meeting** — create/schedule, list/detail, cancel, update attendees. See `references/wecom-meeting.md`.
+- **Todo** — list/detail, create/update/delete, change handling status (accept/reject/complete), assign. See `references/wecom-todo.md`.
 
-```bash
-wecom-cli --version
-```
+Shared calling format, return shape, error handling, contact lookup, and time-format rules: `references/wecom-shared.md`.
 
-如果命令不存在或报错，执行安装：
-
-```bash
-npm install -g @wecom/cli@0.1.9
-```
-
-### Step 2: 检查凭证是否配置
-
-```bash
-wecom-cli auth show --auth-status
-```
-
-- 输出 `authorized` → 已配置，可以继续使用
-- 输出 `unauthorized` → 未配置，需要执行 Step 3
-
-### Step 3: 配置凭证（仅未授权时执行）
-
-```bash
-wecom-cli init --noninteractive
-```
-
-> ⚠️ 该命令会输出一个授权链接和二维码，并阻塞等待用户扫码完成验证。授权成功后命令会自动退出，仅需执行一次。
-
----
-
-## 业务域概览
-
-### 👤 通讯录 (contact)
-
-获取可见范围成员列表、按姓名/别名搜索匹配、查询 userid。
-
-→ 详见 [references/wecom-contact.md](references/wecom-contact.md)
-
-### 💬 消息 (msg)
-
-会话列表查询、消息记录拉取（文本/图片/文件/语音/视频）、多媒体文件获取、文本消息发送。
-
-→ 详见 [references/wecom-msg.md](references/wecom-msg.md)
-
-### 📄 文档 (doc)
-
-文档（`/doc/*`，doc_type=3）创建 / 读取 / 编辑，统一以 Markdown 格式交互。支持通过 docid 或 URL 定位。
-
-→ 详见 [references/wecom-doc.md](references/wecom-doc.md)
-
-### 📊 表格 / 在线表格 (sheet)
-
-表格 / 在线表格（`/sheet/*`）的完整管理能力：新建空白表格、读取完整内容（Markdown 形式，异步轮询）、读取基础信息与子表列表、按区域修改单元格、末尾追加一行、增删子工作表。
-
-→ 详见 [references/wecom-sheet.md](references/wecom-sheet.md)
-
-### 📰 智能文档（智能主页） (smartpage)
-
-智能文档（`/smartpage/*`，原名「智能主页」）创建（基于本地 Markdown 文件、支持多子页面）与内容导出（异步两步）。仅当用户明确提到「智能文档」或「智能主页」时触发。
-
-→ 详见 [references/wecom-smartpage.md](references/wecom-smartpage.md)
-
-### 🧮 智能表格 (smartsheet)
-
-智能表格（`/smartsheet/*`，doc_type=10）创建，子表 / 字段（列） / 记录的增删改查，支持带图片或文件的记录写入与更新；写入受限时支持 Webhook 兜底。
-
-→ 详见 [references/wecom-smartsheet.md](references/wecom-smartsheet.md)
-
-### 📅 日程 (schedule)
-
-查询日程列表与详情、创建/修改/取消日程、添加/移除参与人、查询多成员闲忙状态并分析共同空闲时段。
-
-→ 详见 [references/wecom-schedule.md](references/wecom-schedule.md)
-
-### 🎥 会议 (meeting)
-
-创建预约会议、查询会议列表与详情、取消会议、更新受邀成员。
-
-→ 详见 [references/wecom-meeting.md](references/wecom-meeting.md)
-
-### ✅ 待办 (todo)
-
-查询待办列表与详情、创建/更新/删除待办、变更用户处理状态（接受/拒绝/完成）、分派任务。
-
-→ 详见 [references/wecom-todo.md](references/wecom-todo.md)
-
----
-
-## 公共概念与规则
-
-所有业务域共享的通用调用格式、返回格式、错误处理、通讯录查询方法和时间格式规范。
-
-→ 详见 [references/wecom-shared.md](references/wecom-shared.md)
-
----
-
-## 快速示例
-
-### 查询通讯录成员
-
+## Quick examples
 ```bash
 wecom-cli contact get_userlist '{}'
-```
 
-### 查看最近会话列表
+wecom-cli msg get_msg_chat_list '{"begin_time":"2026-04-08 00:00:00","end_time":"2026-04-15 23:59:59"}'
 
-```bash
-wecom-cli msg get_msg_chat_list '{"begin_time": "2026-04-08 00:00:00", "end_time": "2026-04-15 23:59:59"}'
-```
+wecom-cli msg send_message '{"chat_type":1,"chatid":"zhangsan","msgtype":"text","text":{"content":"hello"}}'
 
-### 发送文本消息
+wecom-cli doc create_doc '{"doc_type":3,"doc_name":"项目周报"}'
+wecom-cli doc get_doc_content '{"docid":"DOCID","type":2}'
 
-```bash
-wecom-cli msg send_message '{"chat_type": 1, "chatid": "zhangsan", "msgtype": "text", "text": {"content": "hello"}}'
-```
+wecom-cli doc create_doc '{"doc_type":4,"doc_name":"项目排期表"}'
+wecom-cli doc sheet_get_info '{"docid":"DOCID"}'
+wecom-cli doc sheet_update_range_data '{"docid":"DOCID","sheet_id":"SHEET_ID","grid_data":{"start_row":0,"start_column":0,"rows":[{"values":[{"cell_value":{"text":"完成需求文档"},"cell_format":{}},{"cell_value":{"text":"张三"},"cell_format":{}}]}]}}'
+wecom-cli doc sheet_append_data '{"docid":"DOCID","sheet_id":"SHEET_ID","row":{"values":[{"cell_value":{"text":"新任务"},"cell_format":{}},{"cell_value":{"text":"李四"},"cell_format":{}}]}}'
+wecom-cli doc sheet_add_sub '{"docid":"DOCID","sheet":{"title":"新子表","row_count":100,"column_count":26},"index":0}'
+wecom-cli doc sheet_delete_sub '{"docid":"DOCID","sheet_id":"SHEET_ID"}'
 
-### 创建文档
+# smartpage create needs the leading '+'
+wecom-cli doc +smartpage_create '{"title":"项目概览","pages":[{"page_title":"需求文档","content_type":1,"page_filepath":"/path/to/requirements.md"}]}'
+wecom-cli doc smartpage_export_task '{"docid":"DOCID","content_type":1}'
 
-```bash
-wecom-cli doc create_doc '{"doc_type": 3, "doc_name": "项目周报"}'
-```
-
-### 读取文档内容（Markdown 格式）
-
-```bash
-wecom-cli doc get_doc_content '{"docid": "DOCID", "type": 2}'
-```
-
-### 新建在线表格（空白）
-
-```bash
-wecom-cli doc create_doc '{"doc_type": 4, "doc_name": "项目排期表"}'
-```
-
-### 读取在线表格基础信息（含子表 sheet_id）
-
-```bash
-wecom-cli doc sheet_get_info '{"docid": "DOCID"}'
-```
-
-### 修改在线表格指定区域内容
-
-```bash
-wecom-cli doc sheet_update_range_data '{"docid": "DOCID", "sheet_id": "SHEET_ID", "grid_data": {"start_row": 0, "start_column": 0, "rows": [{"values": [{"cell_value": {"text": "完成需求文档"}, "cell_format": {}}, {"cell_value": {"text": "张三"}, "cell_format": {}}]}]}}'
-```
-
-### 在线表格末尾追加一行
-
-```bash
-wecom-cli doc sheet_append_data '{"docid": "DOCID", "sheet_id": "SHEET_ID", "row": {"values": [{"cell_value": {"text": "新任务"}, "cell_format": {}}, {"cell_value": {"text": "李四"}, "cell_format": {}}]}}'
-```
-
-### 添加子工作表
-
-```bash
-wecom-cli doc sheet_add_sub '{"docid": "DOCID", "sheet": {"title": "新子表", "row_count": 100, "column_count": 26}, "index": 0}'
-```
-
-### 删除子工作表
-
-```bash
-wecom-cli doc sheet_delete_sub '{"docid": "DOCID", "sheet_id": "SHEET_ID"}'
-```
-
-### 创建智能文档（智能主页）
-
-> ⚠️ **特殊语法**：此命令必须使用 `+smartpage_create`（带 `+` 前缀），加号不可省略；该 `+` 仅适用于此命令，不要泛化到其他 `doc` 子命令。
-
-```bash
-wecom-cli doc +smartpage_create '{"title": "项目概览", "pages": [{"page_title": "需求文档", "content_type": 1, "page_filepath": "/path/to/requirements.md"}]}'
-```
-
-### 导出智能文档内容
-
-```bash
-wecom-cli doc smartpage_export_task '{"docid": "DOCID", "content_type": 1}'
-```
-
-### 查询今天的日程
-
-```bash
-wecom-cli schedule get_schedule_list_by_range '{"start_time": "2026-04-15 00:00:00", "end_time": "2026-04-15 23:59:59"}'
-```
-
-### 创建预约会议
-
-```bash
-wecom-cli meeting create_meeting '{"title": "周例会", "meeting_start_datetime": "2026-04-16 15:00", "meeting_duration": 3600}'
-```
-
-### 查看待办列表
-
-```bash
+wecom-cli schedule get_schedule_list_by_range '{"start_time":"2026-04-15 00:00:00","end_time":"2026-04-15 23:59:59"}'
+wecom-cli meeting create_meeting '{"title":"周例会","meeting_start_datetime":"2026-04-16 15:00","meeting_duration":3600}'
 wecom-cli todo get_todo_list '{}'
+wecom-cli todo create_todo '{"content":"完成Q2规划文档","remind_time":"2026-04-20 09:00:00"}'
 ```
 
-### 创建待办
-
-```bash
-wecom-cli todo create_todo '{"content": "完成Q2规划文档", "remind_time": "2026-04-20 09:00:00"}'
-```
+Note: `+smartpage_create` requires the `+` prefix — it applies only to that command, not other `doc` subcommands.

@@ -3,7 +3,7 @@
   "displayName": "Ima Skills",
   "version": "1.1.9",
   "description": "IMA notes & knowledge base management (read, write, search)",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

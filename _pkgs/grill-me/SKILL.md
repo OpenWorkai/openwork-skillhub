@@ -1,52 +1,42 @@
 ---
 name: grill-me
-description: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me".
-description_zh: "深度追问式方案审查：逐层拆解设计决策，直到达成共识"
+description: Relentlessly interview the user about a plan or design until every decision branch is resolved and you share a common understanding.
 description_en: "Relentless interview to stress-test your plan, resolving each decision branch one by one"
 version: 1.0.0
-homepage: https://github.com/mattpocock/skills
-allowed-tools: Read,Grep
-display_name: "grill-me"
-display_name_en: "grill-me"
-visibility: "public"
+display_name: "Grill Me (方案深挖)"
+tags:
+  - planning
+  - interview
+  - decision-making
+visibility: public
 ---
 
 # Grill Me
 
-## What to do
+## What it does
+Interrogate a plan or design mercilessly until you and the user reach a shared understanding. Walk the whole decision tree branch by branch, resolving dependencies one at a time.
 
-Interview the user relentlessly about every aspect of their plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one.
+**Each question follows this shape:**
+1. Give your recommended answer first.
+2. Ask the question.
+3. Wait for the user's reply before moving on.
 
-**For each question**:
-1. Provide your recommended answer before asking
-2. Ask the question
-3. Wait for the user's response before moving to the next question
+If a question can be answered by looking at the code, use Read/Grep yourself — don't push it back to the user.
 
-If a question can be answered by exploring the codebase, use Read/Grep to answer it yourself — don't ask the user.
+**How to run the session:**
+1. Open by listing the top-level decision branches you see (3–6).
+2. Take the most foundational branch first (others usually hang off it).
+3. Finish one branch completely before starting the next.
+4. Inside a branch, resolve sub-decisions in dependency order.
 
-**How to structure the session**:
-1. Start by listing the top-level decision branches you see in the plan (3–6 items)
-2. Pick the most foundational branch first (others often depend on it)
-3. Walk each branch to completion before moving to the next
-4. Within a branch, resolve sub-decisions in dependency order
-
-**When to stop**: The session is complete when all branches are resolved and there are no open "it depends" answers remaining. Close with a one-paragraph summary of the key decisions made.
-
-## Difference from grill-with-docs
-
-**grill-me** = pure conversational interrogation of a plan. No documentation is read or updated. Use when the plan is still conceptual and you just need to think it through.
-
-**grill-with-docs** = interrogation anchored to the project's existing domain model (CONTEXT.md, ADRs). Terminology is challenged against the glossary, and decisions that crystallise are written into CONTEXT.md / ADRs in real time. Use when the project has an established domain model that the new plan must align with.
+**When to stop:** all branches resolved, no lingering "it depends" answers. Close with a one-paragraph summary of the key decisions.
 
 ## When to use
-
-Invoke this skill when:
-- The user wants to stress-test a plan or design decision
-- The user says "grill me" or "challenge my thinking"
-- You need to surface hidden assumptions or unresolved trade-offs before implementation begins
-- The project does NOT yet have a domain model / CONTEXT.md (if it does, prefer grill-with-docs)
+- The user wants to stress-test a plan or design.
+- The user says "grill me" / "challenge my thinking".
+- You need to surface hidden assumptions or unresolved trade-offs before building.
+- The project has **no** established domain model yet (if it does, anchor the interrogation to its glossary/ADRs instead).
 
 ## Tools
-
-- **Read**: Read existing code, specs, or documentation to answer questions without asking the user
-- **Grep**: Search the codebase to resolve factual questions about current behaviour
+- **Read** — open existing code, specs, or docs to answer a question yourself.
+- **Grep** — search the codebase for facts about current behavior.

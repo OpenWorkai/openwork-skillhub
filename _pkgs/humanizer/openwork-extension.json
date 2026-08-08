@@ -3,7 +3,7 @@
   "displayName": "Humanizer (去 AI 味)",
   "version": "2.1.1",
   "description": "Remove AI writing patterns from text",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

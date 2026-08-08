@@ -3,7 +3,7 @@
   "displayName": "obsidian",
   "version": "1.0.0",
   "description": "Manage and automate Obsidian vaults",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

@@ -3,7 +3,7 @@
   "displayName": "Tencent Docs",
   "version": "1.0.36",
   "description": "Tencent Docs cloud platform for creating, editing & managing online documents",
-  "author": "tencent-docs",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

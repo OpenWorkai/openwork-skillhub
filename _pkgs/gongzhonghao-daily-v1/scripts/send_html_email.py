@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 """
-Send the daily HTML file to Myking's email via QQ Mail API.
+Send the daily HTML file to the configured recipient via the mail API.
 Usage: python3 send_html_email.py <html_file_path> <day_number> <article_title>
 
 This script reads the HTML file, base64-encodes it as an attachment,
-and sends it to 893944505@qq.com via the QQ Mail MCP API.
+and sends it to the address in WECHAT_PUB_EMAIL (falls back to a default).
 Two-phase confirmation is handled automatically.
 """
 import json, base64, hashlib, requests, sys, os
+
+RECIPIENT_EMAIL = os.environ.get("WECHAT_PUB_EMAIL", "operator@example.com")
+RECIPIENT_NAME = os.environ.get("WECHAT_PUB_NAME", "Operator")
 
 API_URL = "https://api.mail.qq.com/mcp"
 
 # Read access token from credentials file
 def get_access_token():
-    cred_path = os.path.expanduser(
-        "~/.workbuddy/connectors/b57b9683-4212-40e6-a9bd-9003819bba27/.credentials.json"
+    cred_path = os.environ.get(
+        "OPENWORK_QQMAIL_CREDENTIALS",
+        os.path.expanduser("~/.openwork/connectors/qq-mail/.credentials.json"),
     )
     with open(cred_path, 'r') as f:
         creds = json.load(f)
@@ -45,7 +49,7 @@ def send_email(html_path, day_num, title):
     subject = f"【让我们来聊AI】Day {day_num} - {title}"
 
     args = {
-        "to": [{"email": "893944505@qq.com", "name": "Myking"}],
+        "to": [{"email": RECIPIENT_EMAIL, "name": RECIPIENT_NAME}],
         "subject": subject,
         "body": f"Day {day_num} 公众号文章 HTML 文件。\n\n请在浏览器中打开后全选复制（Ctrl+A → Ctrl+C），粘贴到公众号编辑器。",
         "body_format": "PLAIN",
@@ -82,7 +86,7 @@ def send_email(html_path, day_num, title):
         result2_text = resp2_data.get("result", {}).get("content", [{}])[0].get("text", "")
         result2 = json.loads(result2_text)
         if result2.get("data", {}).get("queued"):
-            print(f"\n✅ Email sent successfully to 893944505@qq.com")
+            print(f"\n✅ Email sent successfully to {RECIPIENT_EMAIL}")
             print(f"   Subject: {subject}")
             print(f"   Attachment: {filename} ({file_size} bytes)")
             return True

@@ -1,4 +1,12 @@
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import os
+
+# Output directory for generated illustrations (override with OW_ILLUSTRATION_DIR)
+OUT_DIR = os.environ.get(
+    "OW_ILLUSTRATION_DIR",
+    os.path.join(os.path.dirname(__file__), "..", "output"),
+)
+os.makedirs(OUT_DIR, exist_ok=True)
 
 # Colors matching the cover template
 BG_TOP = (247, 242, 245)
@@ -288,9 +296,9 @@ def create_image2():
 
 if __name__ == "__main__":
     img1 = create_image1()
-    img1.save("/Users/myking/Workbuddy/Claw/images/day1_illustration_01.png", quality=95)
-    print("Saved day1_illustration_01.png")
+    img1.save(os.path.join(OUT_DIR, "day1_illustration_01.png"), quality=95)
+    print(f"Saved {os.path.join(OUT_DIR, 'day1_illustration_01.png')}")
     
     img2 = create_image2()
-    img2.save("/Users/myking/Workbuddy/Claw/images/day1_illustration_02.png", quality=95)
-    print("Saved day1_illustration_02.png")
+    img2.save(os.path.join(OUT_DIR, "day1_illustration_02.png"), quality=95)
+    print(f"Saved {os.path.join(OUT_DIR, 'day1_illustration_02.png')}")

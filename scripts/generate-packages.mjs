@@ -5,7 +5,7 @@
  *
  * generate-packages.mjs
  *
- * One-time helper that packages the WorkBuddy skills bundled inside the
+ * One-time helper that stages the OpenWork-authored skill packages into this
  * OpenWork repo (`src/process/resources/skills/<name>/`) into this SkillHub
  * repo's `_pkgs/<name>/` staging area, and writes a correct
  * `openwork-extension.json` manifest for each (with `contributes.skills`
@@ -132,7 +132,7 @@ for (const name of SKILLS) {
   const displayName = DISPLAY_NAME_OVERRIDES[name] || firstPresent(fm, ['display_name_en', 'display_name', 'name']) || name;
   const version = (fm.version || '1.0.0').replace(/^v/, '');
   const description = truncate(firstPresent(fm, ['description_en', 'description_zh', 'description']), 280);
-  const author = fm.author || 'WorkBuddy';
+  const author = fm.author || 'OpenWork';
 
   const manifest = {
     name,

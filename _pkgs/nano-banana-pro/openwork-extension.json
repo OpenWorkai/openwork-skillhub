@@ -3,7 +3,7 @@
   "displayName": "nano-banana-pro",
   "version": "1.0.1",
   "description": "AI image generation & editing (up to 4K)",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

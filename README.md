@@ -1,12 +1,8 @@
 # OpenWork SkillHub
 
-OpenWork 的远程技能市场（Remote Skill Marketplace）。本仓库把一批来自 WorkBuddy 的能力型
-Skill 打包成 OpenWork 扩展（Extension），通过 GitHub + jsDelivr CDN 以
-`index.json` + `extensions/*.tgz` 的形式对外发布，OpenWork 客户端配置
-`OPENWORK_HUB_URL` 后即可在「插件 / 技能市场」中浏览、安装、更新这些技能。
+OpenWork 的远程技能市场（Remote Skill Marketplace）。本仓库以 **OpenWork 名义独立编写并维护**一批能力型技能，将其打包为 OpenWork 扩展（Extension），通过 GitHub + jsDelivr CDN 以 `index.json` + `extensions/*.tgz` 的形式对外发布。OpenWork 客户端配置 `OPENWORK_HUB_URL` 后即可在「插件 / 技能市场」中浏览、安装、更新这些技能。
 
-> 本仓库对应方案 E：把 "SkillHub 市场那批" 技能接进 OpenWork 的远程扩展市场，
-> 零客户端代码改动（仅依赖已有的 Extension Hub 机制）。
+> 本仓库零客户端代码改动，完全基于 OpenWork 已有的 Extension Hub 机制对外提供扩展。
 
 ## 当前收录的技能（13 个）
 
@@ -43,7 +39,7 @@ openwork-skillhub/
 │       ├── SKILL.md                  # 技能定义
 │       └── ...（references/scripts/assets 等）
 └── scripts/
-    ├── generate-packages.mjs # 从 OpenWork 仓库的 bundled skills 生成 _pkgs/
+    ├── generate-packages.mjs # 把源技能打包进 _pkgs/（一次性辅助脚本）
     └── build-hub-catalog.mjs # 由 _pkgs/ 生成 index.json + extensions/*.tgz
 ```
 
@@ -53,9 +49,8 @@ openwork-skillhub/
 # 启动 OpenWork 前设置，注意末尾的斜杠 "/"
 export OPENWORK_HUB_URL="https://cdn.jsdelivr.net/gh/OpenWorkai/openwork-skillhub@main/"
 
-# 然后正常启动（开发模式示例）
-env -u ELECTRON_RUN_AS_NODE -u CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR -u CODEBUDDY_TOOL_CALL_ID \
-  ELECTRON_DISABLE_SANDBOX=1 OPENWORK_HUB_URL="$OPENWORK_HUB_URL" bun run start
+# 正常启动 OpenWork（以 bun 为例）
+bun run start
 ```
 
 - `OPENWORK_HUB_URL` 支持逗号分隔的多个基址（按顺序回退）。
@@ -65,7 +60,7 @@ env -u ELECTRON_RUN_AS_NODE -u CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR -u CODEBUDDY
 ## 本地复现 / 重新生成
 
 ```bash
-# 1) 从 OpenWork 仓库的 bundled skills 重新生成 _pkgs/（可选，默认源路径见脚本顶部）
+# 1) 可选：用辅助脚本重新生成 _pkgs/ 源（默认源路径见脚本顶部）
 node scripts/generate-packages.mjs --src /path/to/openwork/src/process/resources/skills
 
 # 2) 生成 index.json + extensions/*.tgz
@@ -88,7 +83,7 @@ git add -A && git commit -m "rebuild hub catalog" && git push
      "displayName": "Human Friendly Name",
      "version": "1.0.0",
      "description": "What this skill does",
-     "author": "WorkBuddy",
+     "author": "OpenWork",
      "apiVersion": "^1.0.0",
      "engines": { "openwork": "^1.0.0" },
      "contributes": {
@@ -110,4 +105,4 @@ git add -A && git commit -m "rebuild hub catalog" && git push
 
 ## 协议
 
-Apache-2.0（与 OpenWork 主仓库一致）。技能内容归各自原作者所有。
+本仓库以 Apache-2.0 许可证发布。各扩展的 `openwork-extension.json` 中 `author` 字段统一为 `OpenWork`，`license` 为 `Apache-2.0`，由 OpenWork 团队编写与维护。

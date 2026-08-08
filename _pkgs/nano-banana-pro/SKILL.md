@@ -1,62 +1,51 @@
 ---
 name: nano-banana-pro
-description: "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K/2K/4K; use --input-image."
-description_zh: "AI 图片生成与编辑（支持 4K）"
+description: Generate and edit images through the Gemini image model. Text-to-image and image-to-image, up to 4K. Edit by passing an input image plus editing instructions.
 description_en: "AI image generation & editing (up to 4K)"
 version: 1.0.1
 display_name: "nano-banana-pro"
-display_name_en: "nano-banana-pro"
-visibility: "public"
+tags:
+  - image-generation
+  - image-editing
+  - ai-art
+visibility: public
 ---
 
-# Nano Banana Pro Image Generation & Editing
+# nano-banana-pro — Image Generation & Editing
 
-Generate new images or edit existing ones using Google's Nano Banana Pro API (Gemini 3 Pro Image).
+Create new images or modify existing ones using Google's Gemini image model.
 
 ## Usage
+Run the bundled script with `uv run`, using the **absolute skill path** (don't `cd` into the skill folder first):
 
-Run the script using absolute path (do NOT cd to skill directory first):
-
-**Generate new image:**
+**Generate:**
 ```bash
-uv run {baseDir}/scripts/generate_image.py --prompt "your image description" --filename "output-name.png" [--resolution 1K|2K|4K] [--api-key KEY]
+uv run {baseDir}/scripts/generate_image.py --prompt "your description" --filename "output.png" [--resolution 1K|2K|4K] [--api-key KEY]
 ```
 
-**Edit existing image:**
+**Edit an existing image:**
 ```bash
-uv run {baseDir}/scripts/generate_image.py --prompt "editing instructions" --filename "output-name.png" --input-image "path/to/input.png" [--resolution 1K|2K|4K] [--api-key KEY]
+uv run {baseDir}/scripts/generate_image.py --prompt "editing instructions" --filename "output.png" --input-image "path/to/source.png" [--resolution 1K|2K|4K] [--api-key KEY]
 ```
 
-**Important:** Always run from the user's current working directory so images are saved where the user is working.
+Always run from the user's current working directory so outputs land where they're working.
 
-## Default Workflow (draft > iterate > final)
+## Workflow: draft → iterate → final
+- **Draft (1K):** fast loop to validate the concept.
+- **Iterate:** change the prompt in small diffs; use a new filename each run so you keep history.
+- **Final (4K):** only once the prompt is locked.
 
-- Draft (1K): quick feedback loop
-- Iterate: adjust prompt in small diffs; keep filename new per run
-- Final (4K): only when prompt is locked
+## Resolutions
+- `1K` (default) ≈ 1024px
+- `2K` ≈ 2048px
+- `4K` ≈ 4096px
 
-## Resolution Options
+## API key
+Supplied via `--api-key`, or the `GEMINI_API_KEY` environment variable.
 
-- **1K** (default) - ~1024px resolution
-- **2K** - ~2048px resolution
-- **4K** - ~4096px resolution
-
-## API Key
-
-1. `--api-key` argument
-2. `GEMINI_API_KEY` environment variable
-
-## Image Editing
-
-Use `--input-image` parameter with the path to the image. The prompt should contain editing instructions.
-
-## Prompt Handling
-
-**For generation:** Pass user's image description as-is to `--prompt`.
-**For editing:** Pass editing instructions in `--prompt`.
+## Editing
+Pass `--input-image` with the source path; the `--prompt` should describe the edit.
 
 ## Output
-
-- Saves PNG to current directory
-- Script outputs the full path to the generated image
-- **Do not read the image back** - just inform the user of the saved path
+- PNG saved to the current directory; the script prints the full path.
+- Don't read the image back — just tell the user where it was saved.

@@ -3,7 +3,7 @@
   "displayName": "Playwright Browser Automation",
   "version": "2.0.0",
   "description": "Direct Playwright API browser automation: navigate, interact, screenshot, PDF",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

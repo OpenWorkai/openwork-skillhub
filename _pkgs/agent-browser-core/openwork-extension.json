@@ -3,7 +3,7 @@
   "displayName": "Agent Browser Core",
   "version": "1.0.2",
   "description": "AI-friendly web automation via agent-browser CLI with snapshots & refs",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

@@ -3,7 +3,7 @@
   "displayName": "Grill Me (需求深挖访谈)",
   "version": "1.0.0",
   "description": "Relentless interview to stress-test your plan, resolving each decision branch one by one",
-  "author": "WorkBuddy",
+  "author": "OpenWork",
   "apiVersion": "^1.0.0",
   "engines": {
     "openwork": "^1.0.0"
@@ -16,5 +16,6 @@
         "file": "SKILL.md"
       }
     ]
-  }
+  },
+  "license": "Apache-2.0"
 }

@@ -1,8 +1,11 @@
 from PIL import Image, ImageDraw, ImageFont
-import sys
+import sys, os
 
-# Template path
-TEMPLATE_PATH = "/Users/myking/Workbuddy/Claw/cover_template.jpg"
+# Template path (override with OW_COVER_TEMPLATE env var)
+TEMPLATE_PATH = os.environ.get(
+    "OW_COVER_TEMPLATE",
+    os.path.join(os.path.dirname(__file__), "..", "templates", "cover_template.jpg"),
+)
 OUTPUT_PATH = "/tmp/cover_day2.png"
 
 # Load template
