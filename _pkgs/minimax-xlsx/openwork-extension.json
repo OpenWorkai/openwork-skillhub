@@ -1,0 +1,20 @@
+{
+  "name": "minimax-xlsx",
+  "displayName": "minimax-xlsx",
+  "version": "1.0.0",
+  "description": "Create, edit, and analyze Excel spreadsheets",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "minimax-xlsx",
+        "description": "Create, edit, and analyze Excel spreadsheets",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

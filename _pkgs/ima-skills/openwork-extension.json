@@ -1,0 +1,20 @@
+{
+  "name": "ima-skills",
+  "displayName": "Ima Skills",
+  "version": "1.1.9",
+  "description": "IMA notes & knowledge base management (read, write, search)",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "ima-skills",
+        "description": "IMA notes & knowledge base management (read, write, search)",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

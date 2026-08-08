@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-08T18:49:27.036Z",
+  "extensions": {
+    "agent-browser-core": {
+      "name": "agent-browser-core",
+      "displayName": "Agent Browser Core",
+      "version": "1.0.2",
+      "description": "AI-friendly web automation via agent-browser CLI with snapshots & refs",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/agent-browser-core.tgz",
+        "integrity": "sha512-R7HY+Zo4DKoyIHC/meBOCE0/Rz5s+nX3yER/FfCS7rJ0ttsx8oO+vPmADsm3V+2mWgO+EAH2pea4VoJzzo7CkA==",
+        "unpackedSize": 6253
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "agent-browser-core",
+            "description": "AI-friendly web automation via agent-browser CLI with snapshots & refs",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "agent-browser-core"
+      ]
+    },
+    "gongzhonghao-daily-v1": {
+      "name": "gongzhonghao-daily-v1",
+      "displayName": "公众号日更 (WeChat Official Account Daily)",
+      "version": "1.0.0",
+      "description": "\"让我们来聊AI\" 公众号日更内容生产技能（v1）。每天产出 1 篇 MD 稿件 + 1 张封面图 + 2 张内文插图 + 1 个可直接粘贴的 HTML 文件，主推通过 API 推送到公众号草稿箱，邮件作为备用，并自动归档到知识库。触发词：写公众号稿件、备稿、今天的内容、Day N、公众号日更、生成封面、生成插图、发送邮件、归档知识库。当需要为 AI 科普公众号准备每日发布内容时使用此技能。",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/gongzhonghao-daily-v1.tgz",
+        "integrity": "sha512-q200IsZQ7dnoNSsxOX5lgoO+UHlB9HRIVjLL5PTIsR9hp3F5sLSObihtTMyrpuOIPaIa6/5mYRgQYs0ZLcRYoQ==",
+        "unpackedSize": 111492
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "gongzhonghao-daily-v1",
+            "description": "\"让我们来聊AI\" 公众号日更内容生产技能（v1）。每天产出 1 篇 MD 稿件 + 1 张封面图 + 2 张内文插图 + 1 个可直接粘贴的 HTML 文件，主推通过 API 推送到公众号草稿箱，邮件作为备用，并自动归档到知识库。触发词：写公众号稿件、备稿、今天的内容、Day N、公众号日更、生成封面、生成插图、发送邮件、归档知识库。当需要为 AI 科普公众号准备每日发布内容时使用此技能。",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "gongzhonghao-daily-v1"
+      ]
+    },
+    "grill-me": {
+      "name": "grill-me",
+      "displayName": "Grill Me (需求深挖访谈)",
+      "version": "1.0.0",
+      "description": "Relentless interview to stress-test your plan, resolving each decision branch one by one",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/grill-me.tgz",
+        "integrity": "sha512-EoT6X58ifVt+qdonmFeSBPCApV6dMy+NiAgaI+v3XCJD5YSL/7GoCKMw6tqgJKS3VYmAF/VVv8EyMiYJjcLr3A==",
+        "unpackedSize": 1982
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "grill-me",
+            "description": "Relentless interview to stress-test your plan, resolving each decision branch one by one",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "grill-me"
+      ]
+    },
+    "humanizer": {
+      "name": "humanizer",
+      "displayName": "Humanizer (去 AI 味)",
+      "version": "2.1.1",
+      "description": "Remove AI writing patterns from text",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/humanizer.tgz",
+        "integrity": "sha512-a6RPVeh+ieaOtc8EcuQ+WjXqX3pOVLlPoHHyWfTJuQlon9F0eXmO+Y906HGvf231AddcLRXW1aTQfDT5BxjxTw==",
+        "unpackedSize": 9730
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "humanizer",
+            "description": "Remove AI writing patterns from text",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "humanizer"
+      ]
+    },
+    "ima-skills": {
+      "name": "ima-skills",
+      "displayName": "Ima Skills",
+      "version": "1.1.9",
+      "description": "IMA notes & knowledge base management (read, write, search)",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/ima-skills.tgz",
+        "integrity": "sha512-+poTQqb9G4tPeGPRrZYCt+INcbwEfflU6p9T6XMe8gtOP0U1+QZviCcXf0l9DNviQVTHOGc0l9LHzi01GNqy/Q==",
+        "unpackedSize": 11435
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "ima-skills",
+            "description": "IMA notes & knowledge base management (read, write, search)",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "ima-skills"
+      ]
+    },
+    "minimax-xlsx": {
+      "name": "minimax-xlsx",
+      "displayName": "minimax-xlsx",
+      "version": "1.0.0",
+      "description": "Create, edit, and analyze Excel spreadsheets",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/minimax-xlsx.tgz",
+        "integrity": "sha512-9hhHo7fueoTjy731gLklL812L8qPpE0bPdu3XlGvO/sbNwa5UvHYKsUibFefp0w7a8sBM+VGancMZ+sbG6qZ0Q==",
+        "unpackedSize": 94053
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "minimax-xlsx",
+            "description": "Create, edit, and analyze Excel spreadsheets",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "minimax-xlsx"
+      ]
+    },
+    "nano-banana-pro": {
+      "name": "nano-banana-pro",
+      "displayName": "nano-banana-pro",
+      "version": "1.0.1",
+      "description": "AI image generation & editing (up to 4K)",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/nano-banana-pro.tgz",
+        "integrity": "sha512-F9/Q2g0sl3BVDIlB9xfcqhaKha1LYjBSUqxfiuUEJb8/LhsHO3AtHXwmnTiCBMON5EqEg+OR31juJelFB5FbwQ==",
+        "unpackedSize": 3755
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "nano-banana-pro",
+            "description": "AI image generation & editing (up to 4K)",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "nano-banana-pro"
+      ]
+    },
+    "obsidian": {
+      "name": "obsidian",
+      "displayName": "obsidian",
+      "version": "1.0.0",
+      "description": "Manage and automate Obsidian vaults",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/obsidian.tgz",
+        "integrity": "sha512-N4Zg8h5rEbndLNW2HSYA+rWV0a7TbqLskHHfjKMjo1WkbPeGL9j2aaqd2P+rFixllP5Z3OW01gn5C8iquSXbkw==",
+        "unpackedSize": 1952
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "obsidian",
+            "description": "Manage and automate Obsidian vaults",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "obsidian"
+      ]
+    },
+    "playwright-browser-automation": {
+      "name": "playwright-browser-automation",
+      "displayName": "Playwright Browser Automation",
+      "version": "2.0.0",
+      "description": "Direct Playwright API browser automation: navigate, interact, screenshot, PDF",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/playwright-browser-automation.tgz",
+        "integrity": "sha512-YbNucFQuTbD/7317zIHKIpRg3UH/q9pL91XnFfUEy6mKuA+FMatJVer1cU6Knw9qUGS/nXXrbx8TG6Ja9HIDMQ==",
+        "unpackedSize": 5152
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "playwright-browser-automation",
+            "description": "Direct Playwright API browser automation: navigate, interact, screenshot, PDF",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "playwright-browser-automation"
+      ]
+    },
+    "qqbrowser-skill": {
+      "name": "qqbrowser-skill",
+      "displayName": "QQ Browser Use",
+      "version": "1.0.7",
+      "description": "QQBrowserUse is a browser automation skill for AI agents. It lets AI drive QQ Browser via command line to perform web interactions including page navigation, form filling, button clicks, screenshots, data extraction, and file downloads.",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/qqbrowser-skill.tgz",
+        "integrity": "sha512-9UVExrDlNtbTdM8ifhQLPif4H/pzlhnm+jQTrfaE9PDMg1YPTznRGVmQvAG/mN86NkmLSXULuF/hbSFYWMX8xw==",
+        "unpackedSize": 21224
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "qqbrowser-skill",
+            "description": "QQBrowserUse is a browser automation skill for AI agents. It lets AI drive QQ Browser via command line to perform web interactions including page navigation, form filling, button clicks, screenshots, data extraction, and file downloads.",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "qqbrowser-skill"
+      ]
+    },
+    "tencent-docs": {
+      "name": "tencent-docs",
+      "displayName": "Tencent Docs",
+      "version": "1.0.36",
+      "description": "Tencent Docs cloud platform for creating, editing & managing online documents",
+      "author": "tencent-docs",
+      "dist": {
+        "tarball": "extensions/tencent-docs.tgz",
+        "integrity": "sha512-0FqwKiytfHinCfQ7byXOsSc7dQid3P0qnICRyhv8hQQllzasOR0/tQVAxzjCGTtYiJVIif/ELv9Dx3XpfXosbA==",
+        "unpackedSize": 311058
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "tencent-docs",
+            "description": "Tencent Docs cloud platform for creating, editing & managing online documents",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "tencent-docs"
+      ]
+    },
+    "tencentcloud-ocr": {
+      "name": "tencentcloud-ocr",
+      "displayName": "Tencent Cloud General OCR (High Accuracy)",
+      "version": "1.0.4",
+      "description": "High-accuracy OCR powered by Tencent Cloud GeneralAccurateOCR API. Recognizes Chinese, English, numbers and special characters from images. Supports image URL, Base64, and PDF input with optional per-character positioning.",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/tencentcloud-ocr.tgz",
+        "integrity": "sha512-2US9NkaMUF8UWGr6owoJxUm4NKnT0xTC5qjRLgTy5ce5Hg9zUpWHtTcXhR5chjVFEmLkr/BbociDxdtsnGC3zg==",
+        "unpackedSize": 11610
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "tencentcloud-ocr",
+            "description": "High-accuracy OCR powered by Tencent Cloud GeneralAccurateOCR API. Recognizes Chinese, English, numbers and special characters from images. Supports image URL, Base64, and PDF input with optional per-character positioning.",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "tencentcloud-ocr"
+      ]
+    },
+    "wecom-unified": {
+      "name": "wecom-unified",
+      "displayName": "Wecom Unified",
+      "version": "1.0.2",
+      "description": "WeCom CLI suite covering docs, messages, calendars, meetings, todos, and contacts. For organizations with 10+ members: create and read docs, smart sheets, and smart docs. For individuals and small teams (10 or fewer): read/write docs, send/receive direct and group messages, mana…",
+      "author": "WorkBuddy",
+      "dist": {
+        "tarball": "extensions/wecom-unified.tgz",
+        "integrity": "sha512-L19oIW/fwOiTgpHNb25pVY0UOo7UZbhewTQGauZkginz6EqfBphxBraYae6hfGqvCGbWp10jF5gpuQUnGUImmw==",
+        "unpackedSize": 76895
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "wecom-unified",
+            "description": "WeCom CLI suite covering docs, messages, calendars, meetings, todos, and contacts. For organizations with 10+ members: create and read docs, smart sheets, and smart docs. For individuals and small teams (10 or fewer): read/write docs, send/receive direct and group messages, mana…",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "wecom-unified"
+      ]
+    }
+  }
+}

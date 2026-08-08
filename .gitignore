@@ -1,0 +1,10 @@
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local node tooling (this repo has no runtime deps)
+node_modules/
+
+# Build artifacts are committed for jsDelivr, but ignore stray local rebuilds
+*.log

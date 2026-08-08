@@ -1,0 +1,20 @@
+{
+  "name": "playwright-browser-automation",
+  "displayName": "Playwright Browser Automation",
+  "version": "2.0.0",
+  "description": "Direct Playwright API browser automation: navigate, interact, screenshot, PDF",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "playwright-browser-automation",
+        "description": "Direct Playwright API browser automation: navigate, interact, screenshot, PDF",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

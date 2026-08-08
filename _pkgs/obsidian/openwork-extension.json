@@ -1,0 +1,20 @@
+{
+  "name": "obsidian",
+  "displayName": "obsidian",
+  "version": "1.0.0",
+  "description": "Manage and automate Obsidian vaults",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "obsidian",
+        "description": "Manage and automate Obsidian vaults",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

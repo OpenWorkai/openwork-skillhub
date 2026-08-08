@@ -1,0 +1,20 @@
+{
+  "name": "grill-me",
+  "displayName": "Grill Me (需求深挖访谈)",
+  "version": "1.0.0",
+  "description": "Relentless interview to stress-test your plan, resolving each decision branch one by one",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "grill-me",
+        "description": "Relentless interview to stress-test your plan, resolving each decision branch one by one",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

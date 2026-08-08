@@ -1,0 +1,20 @@
+{
+  "name": "tencent-docs",
+  "displayName": "Tencent Docs",
+  "version": "1.0.36",
+  "description": "Tencent Docs cloud platform for creating, editing & managing online documents",
+  "author": "tencent-docs",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "tencent-docs",
+        "description": "Tencent Docs cloud platform for creating, editing & managing online documents",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "tencentcloud-ocr",
+  "displayName": "Tencent Cloud General OCR (High Accuracy)",
+  "version": "1.0.4",
+  "description": "High-accuracy OCR powered by Tencent Cloud GeneralAccurateOCR API. Recognizes Chinese, English, numbers and special characters from images. Supports image URL, Base64, and PDF input with optional per-character positioning.",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "tencentcloud-ocr",
+        "description": "High-accuracy OCR powered by Tencent Cloud GeneralAccurateOCR API. Recognizes Chinese, English, numbers and special characters from images. Supports image URL, Base64, and PDF input with optional per-character positioning.",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}

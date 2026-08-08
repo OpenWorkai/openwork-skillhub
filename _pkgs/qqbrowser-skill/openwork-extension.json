@@ -1,0 +1,20 @@
+{
+  "name": "qqbrowser-skill",
+  "displayName": "QQ Browser Use",
+  "version": "1.0.7",
+  "description": "QQBrowserUse is a browser automation skill for AI agents. It lets AI drive QQ Browser via command line to perform web interactions including page navigation, form filling, button clicks, screenshots, data extraction, and file downloads.",
+  "author": "WorkBuddy",
+  "apiVersion": "^1.0.0",
+  "engines": {
+    "openwork": "^1.0.0"
+  },
+  "contributes": {
+    "skills": [
+      {
+        "name": "qqbrowser-skill",
+        "description": "QQBrowserUse is a browser automation skill for AI agents. It lets AI drive QQ Browser via command line to perform web interactions including page navigation, form filling, button clicks, screenshots, data extraction, and file downloads.",
+        "file": "SKILL.md"
+      }
+    ]
+  }
+}
