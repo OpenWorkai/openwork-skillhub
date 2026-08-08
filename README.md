@@ -47,7 +47,7 @@ openwork-skillhub/
 
 ```bash
 # 启动 OpenWork 前设置，注意末尾的斜杠 "/"
-export OPENWORK_HUB_URL="https://cdn.jsdelivr.net/gh/OpenWorkai/openwork-skillhub@v1.0.0/"
+export OPENWORK_HUB_URL="https://cdn.jsdelivr.net/gh/OpenWorkai/openwork-skillhub@v1.1.0/"
 
 # 正常启动 OpenWork（以 bun 为例）
 bun run start
