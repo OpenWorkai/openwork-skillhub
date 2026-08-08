@@ -1,0 +1,16 @@
+{
+  "name": "ponytail",
+  "displayName": "Ponytail (Lazy Senior Dev)",
+  "version": "1.0.0",
+  "description": "Forces the laziest solution that actually works — channels a senior dev who questions whether code needs to exist at all. 54% less code, 20% cheaper, 27% faster. Supports lite/full/ultra levels.",
+  "author": "OpenWork",
+  "license": "Apache-2.0",
+  "engines": { "openwork": "^1.0.0" },
+  "contributes": {
+    "skills": [
+      { "name": "ponytail", "description": "Lazy senior dev — simplest solution that works, YAGNI-first coding", "file": "SKILL.md" }
+    ]
+  },
+  "tags": ["ponytail", "yagni", "code-efficiency", "lazy-dev"],
+  "homepage": "https://github.com/DietrichGebert/ponytail"
+}

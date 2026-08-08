@@ -1,0 +1,16 @@
+{
+  "name": "stop-slop",
+  "displayName": "Stop Slop (AI Writing Cleaner)",
+  "version": "1.0.0",
+  "description": "Remove AI writing patterns from prose — catches filler phrases, formulaic structures, passive voice, and other AI tells. Produces human-sounding text.",
+  "author": "OpenWork",
+  "license": "Apache-2.0",
+  "engines": { "openwork": "^1.0.0" },
+  "contributes": {
+    "skills": [
+      { "name": "stop-slop", "description": "Detect and remove AI writing patterns from prose", "file": "SKILL.md" }
+    ]
+  },
+  "tags": ["stop-slop", "writing", "text-cleaner", "anti-ai-tells"],
+  "homepage": "https://github.com/hardikpandya/stop-slop"
+}

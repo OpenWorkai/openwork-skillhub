@@ -1,0 +1,16 @@
+{
+  "name": "caveman",
+  "displayName": "Caveman (Token Saver)",
+  "version": "1.0.0",
+  "description": "Ultra-compressed communication mode for AI agents — cuts output tokens by 65% while keeping full technical accuracy. Supports lite/full/ultra/wenyan intensity levels.",
+  "author": "OpenWork",
+  "license": "Apache-2.0",
+  "engines": { "openwork": "^1.0.0" },
+  "contributes": {
+    "skills": [
+      { "name": "caveman", "description": "65% token savings via ultra-compressed caveman-style communication", "file": "SKILL.md" }
+    ]
+  },
+  "tags": ["caveman", "token-saver", "efficiency"],
+  "homepage": "https://github.com/JuliusBrussee/caveman"
+}

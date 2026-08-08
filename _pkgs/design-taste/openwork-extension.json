@@ -1,0 +1,16 @@
+{
+  "name": "design-taste",
+  "displayName": "Design Taste (Anti-Slop Frontend)",
+  "version": "1.0.0",
+  "description": "Anti-slop frontend design skill for AI agents — stops AI from generating boring, generic UIs. Configurable dials for variance, motion, and density. Covers landing pages, portfolios, and redesigns with real design systems.",
+  "author": "OpenWork",
+  "license": "Apache-2.0",
+  "engines": { "openwork": "^1.0.0" },
+  "contributes": {
+    "skills": [
+      { "name": "design-taste", "description": "Give AI good design taste — anti-generic frontend with real design systems", "file": "SKILL.md" }
+    ]
+  },
+  "tags": ["design-taste", "frontend", "ui-design", "anti-slop", "taste"],
+  "homepage": "https://github.com/Leonxlnx/taste-skill"
+}

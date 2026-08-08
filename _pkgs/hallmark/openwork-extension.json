@@ -1,0 +1,16 @@
+{
+  "name": "hallmark",
+  "displayName": "Hallmark (Anti-AI-Slop Web Design)",
+  "version": "1.0.0",
+  "description": "A design skill for AI coding assistants that makes UIs look made, not generated. 21 named themes, 21 macrostructures, 58 slop-test gates. Enforces structural variety across pages.",
+  "author": "OpenWork",
+  "license": "Apache-2.0",
+  "engines": { "openwork": "^1.0.0" },
+  "contributes": {
+    "skills": [
+      { "name": "hallmark", "description": "Anti-AI-slop design skill — makes AI-generated UIs look professionally designed", "file": "SKILL.md" }
+    ]
+  },
+  "tags": ["hallmark", "web-design", "anti-slop", "ui", "design-system"],
+  "homepage": "https://github.com/Nutlope/hallmark"
+}

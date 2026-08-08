@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T19:36:12.958Z",
+  "generatedAt": "2026-08-08T20:05:11.322Z",
   "extensions": {
     "agent-browser-core": {
       "name": "agent-browser-core",
@@ -10,7 +10,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/agent-browser-core.tgz",
-        "integrity": "sha512-hJMMxltRvBYEgJOqBF2f5dyRJuvqA25KDK//KfVGqluiCSjuLHwoQlZcgPmYo7Uiw6E1pqU04p40G2WvMId5Aw==",
+        "integrity": "sha512-GRAA7WmvjqPOSX74Wz+bENB3z8W2qOiJ9j5dKpKBYgO1Yu0RKjZNbdX0LG4BJQu01z1RBTLCsHQKsXrNiypB+w==",
         "unpackedSize": 6037
       },
       "engines": {
@@ -32,6 +32,66 @@
         "agent-browser-core"
       ]
     },
+    "caveman": {
+      "name": "caveman",
+      "displayName": "Caveman (Token Saver)",
+      "version": "1.0.0",
+      "description": "Ultra-compressed communication mode for AI agents — cuts output tokens by 65% while keeping full technical accuracy. Supports lite/full/ultra/wenyan intensity levels.",
+      "author": "OpenWork",
+      "dist": {
+        "tarball": "extensions/caveman.tgz",
+        "integrity": "sha512-b1L+7b3n4HIadNXcthfLCNS01McqHTZtgoTCWFsSMiPQs6JAmHF56uuIIlodKNpVFdNBbPhbmP5jKtMP74mNFQ==",
+        "unpackedSize": 3807
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "caveman",
+            "description": "65% token savings via ultra-compressed caveman-style communication",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "caveman"
+      ]
+    },
+    "design-taste": {
+      "name": "design-taste",
+      "displayName": "Design Taste (Anti-Slop Frontend)",
+      "version": "1.0.0",
+      "description": "Anti-slop frontend design skill for AI agents — stops AI from generating boring, generic UIs. Configurable dials for variance, motion, and density. Covers landing pages, portfolios, and redesigns with real design systems.",
+      "author": "OpenWork",
+      "dist": {
+        "tarball": "extensions/design-taste.tgz",
+        "integrity": "sha512-Z9oBN9a2jPqdVIYl1KmsEvNZUnEMHM9g4tqOsVMRvnvNZmWCVMSi36qMcOqG9F4E1u02LgHyW02n6Vzn35R5Cg==",
+        "unpackedSize": 35538
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "design-taste",
+            "description": "Give AI good design taste — anti-generic frontend with real design systems",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "design-taste"
+      ]
+    },
     "gongzhonghao-daily-v1": {
       "name": "gongzhonghao-daily-v1",
       "displayName": "公众号日更 (WeChat Official Account Daily)",
@@ -40,7 +100,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/gongzhonghao-daily-v1.tgz",
-        "integrity": "sha512-4Cl0L+QrbjkO5pbBngCZo+UBidIbRAo4n6wFdIwtYepWeDTtGFgHNm1jRAB0Nl/bckLdesa+g0nfPntUtwS4cA==",
+        "integrity": "sha512-bMSR/8WDTzZp91Kx3+x+BLx1vD+Pva6CKb4PXZr0BEg6y3TW7y9ymO1v2NnaaJNGtm4tcAwl69htXBx2jz7gFg==",
         "unpackedSize": 109542
       },
       "engines": {
@@ -70,7 +130,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/grill-me.tgz",
-        "integrity": "sha512-h9NOTGyP+/lrfsJ4QkXARguDdF6kyXiHoyfxN22sNCz9k+NX7nqiFFXYPXaqcTIV+KStAyMS22pmG95NhxQv+A==",
+        "integrity": "sha512-byHFHt8TXSNtioFXnw89eIjkFC4yB4uNDzazHIjQKF2uwPiizuHRXqPMmIaNvssJK29ZK0S3vAMlQOjzYYUYKg==",
         "unpackedSize": 1557
       },
       "engines": {
@@ -92,6 +152,36 @@
         "grill-me"
       ]
     },
+    "hallmark": {
+      "name": "hallmark",
+      "displayName": "Hallmark (Anti-AI-Slop Web Design)",
+      "version": "1.0.0",
+      "description": "A design skill for AI coding assistants that makes UIs look made, not generated. 21 named themes, 21 macrostructures, 58 slop-test gates. Enforces structural variety across pages.",
+      "author": "OpenWork",
+      "dist": {
+        "tarball": "extensions/hallmark.tgz",
+        "integrity": "sha512-9O7x3IGkOEEfT+IfZj673jPbZkY7Vd0E8xvGS/TuHRBIdNAL77eIr72JHWjElkL3UWfoBra4SUS/cDYG8GmufQ==",
+        "unpackedSize": 25861
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "hallmark",
+            "description": "Anti-AI-slop design skill — makes AI-generated UIs look professionally designed",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "hallmark"
+      ]
+    },
     "humanizer": {
       "name": "humanizer",
       "displayName": "Humanizer (去 AI 味)",
@@ -100,7 +190,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/humanizer.tgz",
-        "integrity": "sha512-3mFx35Gn+fn6k3uKG90eRv/KhwpcYwEhoT1EVn+iteh82cBBnE7H5lul+1h/9XGlU6Gqn3mmGmf83wcYugVRlw==",
+        "integrity": "sha512-HmINascQAhKtAzTiOVZvtvSMfzY+fLZZPkF06XUNLgb6bRxOQO+We2VVoNq8LyIzNlQJ5nZXDcUJi0EDPQT1pw==",
         "unpackedSize": 4940
       },
       "engines": {
@@ -130,7 +220,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/ima-skills.tgz",
-        "integrity": "sha512-XzfFQ7DKJUMnl/gGIhRnS6uvqbTnlU5a9CCBKjy6r7fzxBwfpCXJOpJD55XQAlFn2Z1o7zBq87kLH/s4BjDWSg==",
+        "integrity": "sha512-gwV5/BouS9/6rmtOTCe+YEIvAd1FwqP0Yanab/o1EIthgDXL6kgncxlDyfyRE+aRDc51RBTBreBBXyh1kJDV8w==",
         "unpackedSize": 7633
       },
       "engines": {
@@ -160,7 +250,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/minimax-xlsx.tgz",
-        "integrity": "sha512-zcNrEBP3DjP92EELWy2xGm1AJ8rQpHLb8s261wko4+lRBW4fvimdbllXC63FGr2KzVJF6z3u6oBIw+13lu3ahA==",
+        "integrity": "sha512-aodBa6/oFOmnEldp2wAGYypWMRkz2vAqcu7JApoWOMMntjWUYBskazj9JSCuJpkdlBrQZDJRd32XDWfMt0p4+g==",
         "unpackedSize": 93157
       },
       "engines": {
@@ -190,7 +280,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/nano-banana-pro.tgz",
-        "integrity": "sha512-2Kiee9zCFldGuERjvNkUqfwoHKfND3amCDfPLPBn19IF/MhH9jPEnLwSd/pJdRdP6kD2ddKz7e7OoN9S1LO9sQ==",
+        "integrity": "sha512-FJq8wAZE5Woe73NRXDvjM5ZLDYg8fXhEElejlR9OXYW+Jm6TeD+AgVmPrbCeNXv26PTLZ1Q6H2M8WRSsQinhHw==",
         "unpackedSize": 3662
       },
       "engines": {
@@ -220,7 +310,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/obsidian.tgz",
-        "integrity": "sha512-TDVMwqxWoFU3lP355RD93GoFGTnuedPgNpJD4wmjM924BybnU8ALKXdaOtMJMb8UGBd++z5vFoerUwStZDaHRg==",
+        "integrity": "sha512-Y9mVnoy9sSiKlfi4cV093mcfOEfF+oJ8wekKa9oUwKerQxwbMfR8XtpXuueMfq3J85ZIwCBgdlGygSE6LQQX/A==",
         "unpackedSize": 1579
       },
       "engines": {
@@ -250,7 +340,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/playwright-browser-automation.tgz",
-        "integrity": "sha512-IjLkQLcX8AWzCRh2rLNrgUon/b2n0SwBBPJlmU00hpe3m2iyH+lLejH4YawKNcOohWidNYfdusxsveks1u/M6w==",
+        "integrity": "sha512-omJskFaUQ6SEMVDXcrDOyXDSFaHCL4ANwlzG84Iyl3d/AHvCFRKbMssLea/WEyZdZDlFGFGuPvMl+zjITtdQww==",
         "unpackedSize": 3912
       },
       "engines": {
@@ -272,6 +362,36 @@
         "playwright-browser-automation"
       ]
     },
+    "ponytail": {
+      "name": "ponytail",
+      "displayName": "Ponytail (Lazy Senior Dev)",
+      "version": "1.0.0",
+      "description": "Forces the laziest solution that actually works — channels a senior dev who questions whether code needs to exist at all. 54% less code, 20% cheaper, 27% faster. Supports lite/full/ultra levels.",
+      "author": "OpenWork",
+      "dist": {
+        "tarball": "extensions/ponytail.tgz",
+        "integrity": "sha512-TWG08npdjG+4lKHxzLnj8UbawV5cSYWMbR0JyYIgQxBihh9nHWWRb31mgz7aspR2F+QLMtEy6gkYqnv0RUQBvg==",
+        "unpackedSize": 4038
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "ponytail",
+            "description": "Lazy senior dev — simplest solution that works, YAGNI-first coding",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "ponytail"
+      ]
+    },
     "qqbrowser-skill": {
       "name": "qqbrowser-skill",
       "displayName": "QQ Browser Use",
@@ -280,7 +400,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/qqbrowser-skill.tgz",
-        "integrity": "sha512-K7m3VWgIWoZdNF4uKvdhT06nJ1BJxvzHYDr8XJTT4Hj1SLGRbNeLASgUid6L9ToomOqDqpBOSA7sXTYrOWUwMw==",
+        "integrity": "sha512-D/3smmoX2z2TamxUaizWmTp2KP5yeE6RbLSXpJj9L/1Rlp/afkkgkFex5Lhq07eQffv8hTWiFbX2Oy0aXpkbmg==",
         "unpackedSize": 19484
       },
       "engines": {
@@ -302,6 +422,36 @@
         "qqbrowser-skill"
       ]
     },
+    "stop-slop": {
+      "name": "stop-slop",
+      "displayName": "Stop Slop (AI Writing Cleaner)",
+      "version": "1.0.0",
+      "description": "Remove AI writing patterns from prose — catches filler phrases, formulaic structures, passive voice, and other AI tells. Produces human-sounding text.",
+      "author": "OpenWork",
+      "dist": {
+        "tarball": "extensions/stop-slop.tgz",
+        "integrity": "sha512-wz7XYocHoEyfhJXgsEMontGkh12LePWexCroi5cNNww9V/lwxwr0TKrEFwV7rkAtEYR2x0Z0f74SknPCYH6O4g==",
+        "unpackedSize": 7135
+      },
+      "engines": {
+        "openwork": "^1.0.0"
+      },
+      "hubs": [
+        "skills"
+      ],
+      "contributes": {
+        "skills": [
+          {
+            "name": "stop-slop",
+            "description": "Detect and remove AI writing patterns from prose",
+            "file": "SKILL.md"
+          }
+        ]
+      },
+      "tags": [
+        "stop-slop"
+      ]
+    },
     "tencent-docs": {
       "name": "tencent-docs",
       "displayName": "Tencent Docs",
@@ -310,7 +460,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/tencent-docs.tgz",
-        "integrity": "sha512-DuMlskZAV9QcBAjRcnjJwoiDFvUxKJb/xthXBoMZ0fkq2h7PYDPIk927HfSIxFHXHSLXPQKNVHats5CAvgEqSg==",
+        "integrity": "sha512-4YTMWL/FOrOBwoEmLx/1GeF5kkf4DHjX1Z6UYTeAB4kd5THAhUwmv14f2m5KvQ10h68lFJ7IzB0BJHFRIvj7gQ==",
         "unpackedSize": 308081
       },
       "engines": {
@@ -340,7 +490,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/tencentcloud-ocr.tgz",
-        "integrity": "sha512-colGIiAMilm5yn8a+IkVaZVSl1nJCX/kgqOZyZavForgeYIxsCLMHD7UgNQHXBZLm03Jy9EGbyM39Tk0Jc+Ocw==",
+        "integrity": "sha512-iePAu325SU+Ibsrv+LCepldn+Y5BW7oBTIRO8BzZyGFvqq1p8bvEV6MzOgviE0RohLDGhqdHIvkGVG6CqlPL+Q==",
         "unpackedSize": 9882
       },
       "engines": {
@@ -370,7 +520,7 @@
       "author": "OpenWork",
       "dist": {
         "tarball": "extensions/wecom-unified.tgz",
-        "integrity": "sha512-tAPsduWzAmWMMhG0cOy40/V4iO33aem4eYsQz2IppG+alfqLwfBvBgcRxKYB+RdGVyQS3qNzD5PN2nADbSplkg==",
+        "integrity": "sha512-h8m9QmY5Ou9NEa66yLoH6xjxHeuu4Ooa/M593osTb1W+WXsS9c3cmMMx3XC7sNY1/WY2PjhE0Mr8GtuIsM7bUQ==",
         "unpackedSize": 75804
       },
       "engines": {
