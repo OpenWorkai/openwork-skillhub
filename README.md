@@ -51,7 +51,7 @@ openwork-skillhub/
 
 ```bash
 # 启动 OpenWork 前设置，注意末尾的斜杠 "/"
-export OPENWORK_HUB_URL="https://cdn.jsdelivr.net/gh/Myking1983/openwork-skillhub@main/"
+export OPENWORK_HUB_URL="https://cdn.jsdelivr.net/gh/OpenWorkai/openwork-skillhub@main/"
 
 # 然后正常启动（开发模式示例）
 env -u ELECTRON_RUN_AS_NODE -u CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR -u CODEBUDDY_TOOL_CALL_ID \
